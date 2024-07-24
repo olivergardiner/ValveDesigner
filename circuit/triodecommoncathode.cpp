@@ -138,7 +138,6 @@ void TriodeCommonCathode::calculateOperatingPoint(QChartView *chartView)
     //parameter[TRI_CC_AR]->setValue(ar);
 
     double re = ra * rl / (ra + rl);
-
     double ark = ar + rk * (mu + 1.0);
     parameter[TRI_CC_GAIN]->setValue(mu * re / (re + ark));
     parameter[TRI_CC_GAIN_B]->setValue(mu * re / (re + ar));

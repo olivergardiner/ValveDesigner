@@ -76,8 +76,6 @@ double Model::anodeVoltage(double ik, double vg1, double vg2, bool secondaryEmis
 
     double ikTest = anodeCurrent(va, vg1, vg2, secondaryEmission);
     double gradient = 100.0 * (anodeCurrent(va + 0.01, vg1, vg2, secondaryEmission) - ikTest);
-    //double ikTest = cathodeCurrent(va, vg1, vg2, secondaryEmission);
-    //double gradient = 100.0 * (cathodeCurrent(va + 0.01, vg1, vg2, secondaryEmission) - ikTest);
     double ikErr = ik - ikTest;
 
     int count = 0;
@@ -98,7 +96,6 @@ double Model::anodeVoltage(double ik, double vg1, double vg2, bool secondaryEmis
             break;
         }
         ikTest = anodeCurrent(va, vg1, vg2, secondaryEmission);
-        //ikTest = cathodeCurrent(va, vg1, vg2, secondaryEmission);
         gradient = 100.0 * (anodeCurrent(va + 0.01, vg1, vg2, secondaryEmission) - ikTest);
         ikErr = ik - ikTest;
     }

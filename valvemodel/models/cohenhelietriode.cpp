@@ -61,11 +61,6 @@ double CohenHelieTriode::cohenHelieEpk(double v, double vg, double kp, double kv
 {
     double f = std::sqrt(kvb + v * kvb1 + v * v);
     double y = kp * (1 / mu + (vg + vct) / f);
-
-    double i1 = v / kp;
-    double i2 = std::exp(y);
-    double i3 = 1.0 + i2;
-    double i4 = std::log(i3);
     double ep = (v / kp) * std::log(1.0 + std::exp(y));
 
     return pow(ep, x);
